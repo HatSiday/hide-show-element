@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Battambang:wght@100;300;400;700;900&display=swap');
+*{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Battambang", system-ui;
+    font-weight: 300;
+    font-style: normal;
+}
+body{
+    background-color: gainsboro;
+}
+.wrapper{
+    width: 500px;
+    background-color: white;
+    margin: 150px auto 0;
+    border-radius: 4px;
+}
+.wrapper .tabs ul{
+    width: 100%;
+    height: 50px;
+    display: flex;
+}
+.wrapper .tabs ul li{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25%;
+    height: 50px;
+    padding: 0 20px;
+    text-align: center;
+    font-size: 18px;
+    background-color: yellowgreen;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.wrapper .tabs ul li:first-child{
+    border-top-left-radius: 4px;
+}
+.wrapper .tabs ul li:last-child{
+    border-top-right-radius: 4px;
+}
+.wrapper .content{
+    padding: 20px;
+    height: 240px;
+    border-bottom: 4px solid yellowgreen;
+    border-radius: 4px;
+}
+.wrapper .content .tab-content{
+    font-size: 16px;
+}
+.wrapper .content .tab-content b{
+    font-weight: 400;
+    color: blue;
+}
+/* CSS class with jQuery*/
+.wrapper .tabs ul li.active{
+    border-bottom: 1px solid yellowgreen;
+    background-color: white;
+}

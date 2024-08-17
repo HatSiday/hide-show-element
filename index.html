@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hide and Show Element</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="wrapper">
+    <div class="tabs">
+      <ul>
+        <li data-list="html-tab" class="active">
+          <p>HTML</p>
+        </li>
+        <li data-list="css-tab">
+          <p>CSS</p>
+        </li>
+        <li data-list="javascript-tab">
+          <p>JavaScript</p>
+        </li>
+        <li data-list="jquery-tab">
+          <p>jQuery</p>
+        </li>
+      </ul>
+    </div>
+
+    <div class="content">
+      <div class="tab-content html-tab">
+        <b>HTML</b> មកពីពាក្យថា hypertext markup language ហើយត្រូវបានគេប្រើប្រាស់ដើម្បីធ្វើការបង្កើត Web Page ដែលបង្ហាញនៅលើ​ Website
+        ម្យ៉ាងវិញទៀត HTML ដូចទៅនិងគ្រោងឆ្អឹង ឬរចនាសម្ព័ន (structure) របស់ Web Page ។ 
+        នៅពេលដែល Web Page ច្រើនផ្គុំបញ្ចូលគ្នាបង្កើតបានជា Website ។
+      </div>
+      <div class="tab-content css-tab">
+        <b>CSS</b> មកពីពាក្យថា cascading style sheets គឺជា style sheet language មួយដែលត្រូវបាន web developer ប្រើប្រាស់ធ្វើការ
+        រចនាបន្ថែមទៅលើ HTML Element ដើម្បីផ្លាស់ប្ដូរប្លង់ (Layout) និងរូបរាងរបស់គេហទំព័រ (web page)។
+        ឧទាហរណ៍៖ យើងប្រើ CSS ដើម្បីធ្វើការផ្លាស់ប្ដូរទំហំ ឬប្រភេទអក្សររបស់ HTML Element ណាមួយ។
+      </div>
+      <div class="tab-content javascript-tab">
+        <b>JavaScript</b> គឺជា client-side scripting language ដែលអនុញ្ញាតិឱ្យ developer អាចសរសេរកូដនៅក្នុង web page 
+        របស់ពួកគេ។ជាទូទៅកូដរបស់ JavaScript ត្រូវបានដាក់ចូលនៅក្នុង HTML(hypertext markup language) file 
+        ហើយដំណើរការដោយផ្ទាល់ពី web page ហើយសព្វថ្ងៃ JavaScript ក៏ជា most popular programming language មួយផងដែរ។
+      </div>
+      <div class="tab-content jquery-tab">
+        <b>jQuery</b> is a JavaScript Library.
+      </div>
+    </div>
+  </div>
+
+  <script src="js/jquery-3.7.1.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      $(".content .tab-content").hide();
+      $(".content .tab-content:first-child").show();
+
+      $("ul li").click(function(){
+        $("ul li").removeClass("active");
+        $(this).addClass("active");
+
+        var current_tab_value = $(this).attr("data-list");
+        $(".content .tab-content").hide();
+        $("."+current_tab_value).show();
+      });
+    });
+  </script>
+</body>
+</html>
